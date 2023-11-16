@@ -1,0 +1,309 @@
+*{
+    box-sizing: border-box;
+}
+
+.A{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border: 5px solid #fc24aa;
+    border-radius: 50%;
+    border-left-color: transparent;
+    position: relative;
+    animation-name: spin1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.A::before{
+            content: "";
+            width: calc(100% + 15px);
+            height: calc(100% + 15px);
+            border: 5px solid #0090ff;
+            position: absolute;
+            border-radius: 50%;
+            border-top-color: transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+}
+.A::after{
+            content: "";
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            border: 5px solid #fc9000;
+            position: absolute;
+            border-radius: 50%;
+            border-right-color: transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+}
+.A:hover{
+            animation-play-state: paused;
+}
+@keyframes spin1 {
+                    0%{
+                        transform: rotate(0turn);
+                    }
+                    100%{
+                        transform: rotate(1turn);
+                    }
+}
+
+
+
+
+
+
+
+.B{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border: 5px solid #2490ff;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    position: relative;
+    animation-name: spin2;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.B::before{
+            content: "";
+            width: calc(100% + 15px);
+            height: calc(100% + 15px);
+            position: absolute;
+            border: 5px solid #fc9000;
+            border-radius: 50%;
+            border-bottom-color: transparent;
+            left: -13px;
+            top: -13px;
+            animation-name: spin2;
+            animation-timing-function: linear;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+}
+.B::after{
+            content: "";
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            position: absolute;
+            border: 5px solid black;
+            border-radius: 50%;
+            border-bottom-color: transparent;
+            left: -20px;
+            top: -20px;
+            animation-name: spin2;
+            animation-timing-function: linear;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+}
+.B:hover , .B:hover::before , .B:hover::after{
+                                                animation-play-state: running;
+}
+@keyframes spin2 {
+    0%{
+        transform: rotate(0turn);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.C{
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border: 5px solid black;
+    display: block;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation-name: spin3;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+
+}
+@keyframes spin3 {
+    0%{
+        transform: rotate(0turn);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.D{
+    width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2 , 240px);
+    grid-template-rows: auto;
+    gap: 15px 15px;
+    position: relative;
+}
+.D1{
+    display: grid;
+    grid-template-columns: repeat(4 , 50px);
+    grid-template-rows: repeat(7 , 50px);
+}
+.D2{
+    display: grid;
+    grid-template-columns: repeat(4 , 50px);
+    grid-template-rows: repeat(7 , 50px);
+}
+.D1 div{
+    background-color: #323234;
+}
+.D2 div{
+    background-color: #323234;
+}
+.d1{
+    grid-area: 1 / 1 / 2 / span 4;
+}
+.d2{
+    grid-area: 2 / 1 / span 2 / 2;
+}
+.d3{
+    grid-area: 4 / 1 / 5 / span 4;
+}
+.d4{
+    grid-area: 5 / 1 / span 2 / 2;
+}
+.d5{
+    grid-area: 7 / 1 / 8 / span 4;
+}
+.d6{
+    grid-area: 1 / 1 / span 6 / 2;
+}
+.d7{
+    grid-area: 7 / 1 / 8 / span 4;
+}
+.D::before{
+            content: "";position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #fea604;
+            left: 150px;
+            top: 5px;
+            animation-name: move-1;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+}
+.D::after{
+            content: "";position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #fea604;
+            right: 55px;
+            bottom: 55px;
+            opacity: 0;
+            animation-name: move-2;
+            animation-duration: 2s;
+            animation-delay: 4s;
+            animation-timing-function: linear;
+}
+@keyframes move-1{
+                    0%{
+                        left: 150px;
+                        top: 5px;
+                    }
+                    10%{
+                        left: 5px;
+                        top: 5px;
+                    }
+                    20%{
+                        left: 5px;
+                        top: 155px;
+                    }
+                    30%{
+                        left: 150px;
+                        top: 155px;
+                    }
+                    40%{
+                        left: 5px;
+                        top: 155px;
+                    }
+                    50%{
+                        left: 5px;
+                        top: 305px;
+                    }
+                    60%{
+                        left: 150px;
+                        top: 305px;
+                    }
+                    70%{
+                        left: 5px;
+                        top: 305px;
+                    }
+                    90%{
+                        left: 5px;
+                        top: 5px;
+                    }
+                    100%{
+                        left: 150px;
+                        top: 5px;
+                    }
+}
+@keyframes move-2{
+                    0%{
+                        right: 55px;
+                        bottom: 55px;
+                        opacity: 0;
+                    }
+                    10%{
+                        right: 55px;
+                        bottom: 55px;
+                        opacity: 1;
+                    }
+                    30%{
+                        right: 200px;
+                        bottom: 55px;
+                        opacity: 1;
+                    }
+                    90%{
+                        right: 200px;
+                        bottom: 350px;
+                        opacity: 1;
+                    }
+                    100%{
+                        right: 200px;
+                        bottom: 350px;
+                        opacity: 0;
+                    }
+}
